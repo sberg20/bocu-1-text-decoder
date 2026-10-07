@@ -1,0 +1,14 @@
+[project]
+name = "bocu-1-text-decoder"
+version = "0.1.0"
+description = "Decodes byte sequences encoded with the BOCU-1 compression scheme defined in Unicode Technical Note #191 into Python strings."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
