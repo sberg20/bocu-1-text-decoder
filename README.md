@@ -29,3 +29,10 @@ BOCU-1 compresses Unicode text into ASCII-safe byte sequences for use in MIME-tr
 
 - `decode(data: bytes) -> str` — decode a BOCU-1 byte sequence. Accepts `bytes`, `bytearray`, or `memoryview`.
 - `BOCU1DecodeError` — subclass of `ValueError`, raised on malformed input.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
